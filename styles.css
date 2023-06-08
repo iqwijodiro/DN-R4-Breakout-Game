@@ -1,0 +1,95 @@
+  @import url('https://fonts.googleapis.com/css2?family=Kurale&display=swap');
+
+
+* {
+  box-sizing: border-box;
+}
+html {
+  --s: 84px; /* control the size*/
+  --c1: #f2f2f2;
+  --c2: #cdcbcc;
+  --c3: #999999;
+  
+  --_g: 0 120deg,#0000 0;
+  background:
+    conic-gradient(from    0deg at calc(500%/6) calc(100%/3),var(--c3) var(--_g)),
+    conic-gradient(from -120deg at calc(100%/6) calc(100%/3),var(--c2) var(--_g)),
+    conic-gradient(from  120deg at calc(100%/3) calc(500%/6),var(--c1) var(--_g)),
+    conic-gradient(from  120deg at calc(200%/3) calc(500%/6),var(--c1) var(--_g)),
+    conic-gradient(from -180deg at calc(100%/3) 50%,var(--c2)  60deg,var(--c1) var(--_g)),
+    conic-gradient(from   60deg at calc(200%/3) 50%,var(--c1)  60deg,var(--c3) var(--_g)),
+    conic-gradient(from  -60deg at 50% calc(100%/3),var(--c1) 120deg,var(--c2) 0 240deg,var(--c3) 0);
+  background-size: calc(var(--s)*1.732) var(--s);
+  /* sqrt(3) = 1.732 */
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Kurale', serif;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 45px;
+  color: #4a4a4a;
+}
+
+canvas {
+  background: #f0f0f0;
+  display: block;
+  border-radius: 8px;
+}
+
+.btn {
+  cursor: pointer;
+  border: 0;
+  padding: 10px 20px;
+  background: #ae0000;
+  color: #fff;
+  border-radius: 12px;
+  font-size: 18px;
+  font-family: inherit;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:hover {
+  background: #935600;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.rules-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.rules {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #818181f2;
+  color: #fff;
+  min-height: 100vh;
+  width: 300px;
+  padding: 20px;
+  line-height: 1.5;
+  transform: translateX(300px);
+  transition: transform 1s ease-in-out;
+}
+
+.rules.show {
+  transform: translateX(0px);
+}
